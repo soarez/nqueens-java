@@ -48,9 +48,9 @@ public abstract class Solver<Gene> {
 
   private void decimate() {
     Collections.sort(this.population);
-    int kill = (int) Math.round(this.config.decimation * this.population.size());
     int populationSize = this.population.size();
-    this.population = this.population.subList(populationSize - kill, populationSize);
+    int kill = (int) Math.round(this.config.decimation * populationSize);
+    this.population.retainAll(this.population.subList(0, populationSize - kill));
   }
 
   private void breed() {

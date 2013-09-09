@@ -99,17 +99,17 @@ public class NQueens extends Solver<NQueensGene> {
     int maxgen = Integer.parseInt(args[1]);
     System.out.format("Running with size %s in %s generations.\n", size, maxgen);
 
-    Solver solver = new NQueens(size, maxgen);
+    Solver<NQueensGene> solver = new NQueens(size, maxgen);
 
     solver.run();
-    Specimen best = solver.best();
+    Specimen<NQueensGene> best = solver.best();
     System.out.format("Best solution found: %s\n", best);
 
     // System.out.println("All solutions:");
     // for (Object specimen : solver.getPopulation())
     //   System.out.println(specimen);
 
-    NQueensGene gene = (NQueensGene) best.Gene;
+    NQueensGene gene = best.Gene;
     int[] genCode = gene.GenCode;
 
     for(int i = 0; i < size; ++i)

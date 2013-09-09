@@ -1,4 +1,4 @@
-public class Specimen<Gene> implements Comparable<Specimen> {
+public class Specimen<Gene> implements Comparable<Specimen<Gene>> {
   public final Gene Gene;
   public final Double Fitness;
 
@@ -13,7 +13,7 @@ public class Specimen<Gene> implements Comparable<Specimen> {
   }
 
   @Override
-  public int compareTo(Specimen other) {
+  public int compareTo(Specimen<Gene> other) {
     return this.Fitness.compareTo(other.Fitness);
   }
 }

@@ -16,7 +16,7 @@ public abstract class Solver<Gene> {
   }
 
   private int generations;
-  private List<Specimen<Gene>> population;
+  private ArrayList<Specimen<Gene>> population;
 
   public Iterable<Specimen<Gene>> getPopulation() {
     Collections.sort(this.population);
